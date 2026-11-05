@@ -1,0 +1,26 @@
+{
+  "name": "nrw-explorer-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NRW Explorer – REST-API auf Azure Functions (Node.js, TypeScript, Cosmos DB)",
+  "main": "dist/api/src/functions/*.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build",
+    "start": "func start",
+    "seed": "npm run build && node dist/api/scripts/seed.js",
+    "test": "npm run build && node dist/api/scripts/smoke-test.js"
+  },
+  "dependencies": {
+    "@azure/cosmos": "^4.2.0",
+    "@azure/functions": "^4.6.0",
+    "@azure/identity": "^4.5.0",
+    "applicationinsights": "^2.9.6",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "typescript": "^5.7.2"
+  }
+}
