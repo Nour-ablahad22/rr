@@ -1,5 +1,6 @@
 import 'dart:math'; // مكتبة العشوائية
 import 'package:flutter/material.dart';
+import '../widgets/app_button.dart';
 
 class SecondScreen extends StatefulWidget {
   @override
@@ -381,7 +382,7 @@ class _SecondScreenState extends State<SecondScreen> {
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 20),
-                  ElevatedButton(
+                  AppButton(
                     onPressed: _resetQuiz,
                     child: Text('Quiz erneut starten'),
                   ),
@@ -420,26 +421,19 @@ class _SecondScreenState extends State<SecondScreen> {
                           shuffledQuestions[currentQuestionIndex]["answers"].length,
                           (index) => Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
-                            child: ElevatedButton(
+                            child: AppButton(
                               onPressed: () => _selectAnswer(index),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.blue,
-                                foregroundColor: Colors.white,
-                              ),
                               child: Text(shuffledQuestions[currentQuestionIndex]["answers"][index]),
                             ),
                           ),
                         ),
                       ),
                       SizedBox(height: 20),
-                      ElevatedButton(
+                      AppButton(
                         onPressed: _endQuiz,
+                        variant: AppButtonVariant.danger,
+                        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                         child: Text('Beenden'),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
-                          foregroundColor: Colors.white,
-                          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                        ),
                       ),
                     ],
                   ),
