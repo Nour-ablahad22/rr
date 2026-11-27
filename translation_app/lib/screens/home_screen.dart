@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'second_screen.dart';
+import '../widgets/app_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -40,14 +41,10 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 Image.asset('assets/logo.png', width: 150, height: 150),
                 SizedBox(height: 30),
-                ElevatedButton(
+                AppButton(
                   onPressed: () => _onButtonPressed(context),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                    textStyle: TextStyle(fontSize: 18),
-                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                  textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   child: Text('اضغط هنا للانتقال إلى الأسئلة'),
                 ),
               ],
